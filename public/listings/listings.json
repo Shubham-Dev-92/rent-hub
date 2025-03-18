@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "buildingName": "Sunrise Apartments",
+    "location": "Downtown, New York",
+    "area": "1200 sq ft",
+    "leaseType": "Long Term",
+    "rent": "$2500",
+    "furnished": "Yes",
+    "amenities": ["Gym", "Swimming Pool", "Car Parking", "Elevator"],
+    "title": "Spacious 2 BHK Apartment",
+    "description": "Beautiful apartment with scenic views and all amenities included."
+  },
+  {
+    "id": 2,
+    "buildingName": "Green Valley Residency",
+    "location": "San Francisco, CA",
+    "area": "900 sq ft",
+    "leaseType": "Short Term",
+    "rent": "$1800",
+    "furnished": "No",
+    "amenities": ["Power Backup", "Security"],
+    "title": "Cozy 1 BHK Apartment",
+    "description": "Ideal for small families or working professionals."
+  }
+]

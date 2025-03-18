@@ -1,0 +1,181 @@
+<div class="m-auto w-6/12">
+  <h2 class="text-2xl my-6">Create a New Listing</h2>
+
+  <form [formGroup]="listingForm" (ngSubmit)="onSubmit()">
+    <!-- Building Name -->
+    <div class="my-2">
+      <label for="buildingName" class="m-2">Building Name</label>
+      <input
+        type="text"
+        id="buildingName"
+        formControlName="buildingName"
+        class="border"
+        required
+      />
+    </div>
+
+    <!-- Property Location -->
+    <div class="my-2">
+      <label for="location" class="m-2">Property Location</label>
+      <input
+        type="text"
+        id="location"
+        formControlName="location"
+        class="border"
+        required
+      />
+    </div>
+
+    <!-- Area (sq feet) -->
+    <div class="my-2">
+      <label for="area" class="m-2">Area (sq feet)</label>
+      <input
+        type="number"
+        id="area"
+        formControlName="area"
+        class="border"
+        required
+      />
+    </div>
+
+    <!-- Stay/Lease Type -->
+    <div class="my-2">
+      <label class="m-2">Stay/Lease Type</label><br />
+      <input
+        type="radio"
+        id="longTerm"
+        formControlName="leaseType"
+        value="long-term"
+        class="m-2"
+      />
+      <label for="longTerm" class="m-2">Long Term</label>
+
+      <input
+        type="radio"
+        class="m-2"
+        id="shortTerm"
+        formControlName="leaseType"
+        value="short-term"
+      />
+      <label for="shortTerm">Short Term</label>
+    </div>
+
+    <!-- Expected Rent -->
+    <div class="my-2">
+      <label for="rent">Expected Rent</label>
+      <input
+        type="number"
+        id="rent"
+        formControlName="rent"
+        class="border m-2"
+        required
+      />
+    </div>
+
+    <!-- Furnished Status -->
+    <div class="my-2">
+      <label>Is the Room Furnished?</label><br />
+      <input
+        class="m-2"
+        type="radio"
+        id="furnishedYes"
+        formControlName="furnished"
+        value="yes"
+      />
+      <label for="furnishedYes">Yes</label>
+
+      <input
+        class="m-2"
+        type="radio"
+        id="furnishedNo"
+        formControlName="furnished"
+        value="no"
+      />
+      <label for="furnishedNo">No</label>
+    </div>
+
+    <!-- Amenities (Checkbox) -->
+    <div class="my-2">
+      <label>Amenities</label><br />
+      <input class="m-2" type="checkbox" id="gym" formControlName="gym" />
+      <label for="gym">Gym</label>
+
+      <input class="m-2" type="checkbox" id="pool" formControlName="pool" />
+      <label for="pool">Swimming Pool</label>
+
+      <input
+        class="m-2"
+        type="checkbox"
+        id="parking"
+        formControlName="parking"
+      />
+      <label for="parking">Car Parking</label>
+
+      <input class="m-2" type="checkbox" id="backup" formControlName="backup" />
+      <label for="backup">Power Backup</label>
+
+      <input
+        class="m-2"
+        type="checkbox"
+        id="elevator"
+        formControlName="elevator"
+      />
+      <label for="elevator">Elevator</label>
+
+      <input
+        class="m-2"
+        type="checkbox"
+        id="clubHouse"
+        formControlName="clubHouse"
+      />
+      <label for="clubHouse">Club House</label>
+
+      <input
+        class="m-2"
+        type="checkbox"
+        id="security"
+        formControlName="security"
+      />
+      <label for="security">Security</label>
+    </div>
+
+    <!-- Title -->
+    <div class="my-2">
+      <label for="title">Ad Title</label>
+      <input
+        type="text"
+        id="title"
+        formControlName="title"
+        class="border m-2"
+        required
+      />
+    </div>
+
+    <!-- Description -->
+    <div class="my-2">
+      <label for="description">Ad Description</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        class="border m-2"
+        required
+      ></textarea>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex p-5">
+      <button
+        type="submit"
+        class="mx-5 border-1 p-2 rounded-xs bg-cyan-700 text-white cursor-pointer"
+        [disabled]="listingForm.invalid"
+      >
+        Submit
+      </button>
+      <a
+        routerLink="/home"
+        class="border-1 p-2 rounded-xs bg-red-600 text-white cursor-pointer"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>
