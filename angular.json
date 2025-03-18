@@ -31,15 +31,17 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public",
-                "output": "/public"
+                "input": "public"
               }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/cyan-orange.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,9 +95,12 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/cyan-orange.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           }
         }
       }

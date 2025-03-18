@@ -1,1 +1,46 @@
-<p>listing-details works!</p>
+<div *ngIf="listing" class="w-7/12 mx-auto my-10 flex">
+  <div>
+    <div class="text-orange-700 text-3xl my-3">{{ listing.title }}</div>
+    <p><strong>Building:</strong> {{ listing.buildingName }}</p>
+    <p><strong>Location:</strong> {{ listing.location }}</p>
+    <p><strong>Area:</strong> {{ listing.area }}</p>
+    <p><strong>Rent:</strong> {{ listing.rent }}</p>
+    <p><strong>Lease Type:</strong> {{ listing.leaseType }}</p>
+    <p><strong>Furnished:</strong> {{ listing.furnished }}</p>
+
+    <div class="text-orange-700 text-3xl my-3">Amenities:</div>
+    <ul>
+      <li *ngFor="let amenity of listing.amenities">{{ amenity }}</li>
+    </ul>
+    <hr />
+
+    <input
+      class="border"
+      [(ngModel)]="newComment"
+      placeholder="Add a comment..."
+    />
+    <button
+      class="border-1 p-0.5 rounded-xs bg-cyan-700 text-white cursor-pointer my-2"
+      (click)="addComment()"
+    >
+      Add Comment
+    </button>
+
+    <h3>Comments</h3>
+    <div *ngFor="let comment of comments; let i = index" class="comment">
+      <p>{{ comment }}</p>
+    </div>
+
+    <br />
+    <button
+      class="border-1 p-0.5 rounded-xs bg-orange-800 text-white cursor-pointer my-2"
+      (click)="navigateToListings()"
+    >
+      Back to Listings
+    </button>
+  </div>
+  <div class="mx-6">
+    <img src="{{ listing.image }}" class="w-80" />
+    <p>{{ listing.description }}</p>
+  </div>
+</div>

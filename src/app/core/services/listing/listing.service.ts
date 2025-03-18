@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Listing } from '../../models/listing.model';
+import { API_URLS } from '../../constants/api_urls';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ListingService {
-  private jsonUrl = 'public/listing/listings.json'; // Path to the JSON file
-
   constructor(private http: HttpClient) {}
 
-  // Method to fetch listings from JSON file
-  getListings(): Observable<any> {
-    return this.http.get<any>(this.jsonUrl);
+  // Method to fetch JSON data
+  getListings(): Observable<Listing[]> {
+    return this.http.get<any[]>(API_URLS.LISTINGS);
   }
 }

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ListingService } from '../../../core/services/listing/listing.service';
+import { Listing } from '../../../core/models/listing.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +10,30 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  listings = [
-    {
-      title: 'Apartment 1',
-      description: '2BHK with parking',
-      image:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdd8XDoV-Si1xDf8IKqEtW5jKgZY-8nKDecw&s',
-    },
-    {
-      title: 'Apartment 2',
-      description: '3BHK with pool',
-      image:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_QBS6sr0XbXHSUfY6CNWLYlF6Ftr8FsSH9w&s',
-    },
-  ];
+  listings: Listing[] = [];
+
+  constructor(
+    private listingsService: ListingService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.getListings();
+  }
+
+  getListings(): void {
+    this.listingsService.getListings().subscribe({
+      next: (data) => {
+        this.listings = data;
+        console.log('Listings:', this.listings);
+      },
+      error: (error) => {
+        console.error('Error loading listings:', error);
+      },
+    });
+  }
+
+  viewDetails(id: number) {
+    this.router.navigate(['/listing-details', id]);
+  }
 }

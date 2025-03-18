@@ -2,7 +2,6 @@
   <h2 class="text-2xl my-6">Create a New Listing</h2>
 
   <form [formGroup]="listingForm" (ngSubmit)="onSubmit()">
-    <!-- Building Name -->
     <div class="my-2">
       <label for="buildingName" class="m-2">Building Name</label>
       <input
@@ -14,7 +13,6 @@
       />
     </div>
 
-    <!-- Property Location -->
     <div class="my-2">
       <label for="location" class="m-2">Property Location</label>
       <input
@@ -26,7 +24,6 @@
       />
     </div>
 
-    <!-- Area (sq feet) -->
     <div class="my-2">
       <label for="area" class="m-2">Area (sq feet)</label>
       <input
@@ -38,7 +35,6 @@
       />
     </div>
 
-    <!-- Stay/Lease Type -->
     <div class="my-2">
       <label class="m-2">Stay/Lease Type</label><br />
       <input
@@ -60,7 +56,6 @@
       <label for="shortTerm">Short Term</label>
     </div>
 
-    <!-- Expected Rent -->
     <div class="my-2">
       <label for="rent">Expected Rent</label>
       <input
@@ -72,7 +67,6 @@
       />
     </div>
 
-    <!-- Furnished Status -->
     <div class="my-2">
       <label>Is the Room Furnished?</label><br />
       <input
@@ -94,7 +88,6 @@
       <label for="furnishedNo">No</label>
     </div>
 
-    <!-- Amenities (Checkbox) -->
     <div class="my-2">
       <label>Amenities</label><br />
       <input class="m-2" type="checkbox" id="gym" formControlName="gym" />
@@ -139,7 +132,6 @@
       <label for="security">Security</label>
     </div>
 
-    <!-- Title -->
     <div class="my-2">
       <label for="title">Ad Title</label>
       <input
@@ -151,7 +143,6 @@
       />
     </div>
 
-    <!-- Description -->
     <div class="my-2">
       <label for="description">Ad Description</label>
       <textarea
@@ -162,7 +153,6 @@
       ></textarea>
     </div>
 
-    <!-- Buttons -->
     <div class="flex p-5">
       <button
         type="submit"

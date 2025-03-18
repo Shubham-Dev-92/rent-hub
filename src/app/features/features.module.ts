@@ -4,7 +4,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { HomeComponent } from './home/components/home.component';
 import { LoginComponent } from './login/components/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/components/register.component';
 import { ProfileComponent } from './profile/components/profile.component';
 import { PostComponent } from './post/components/post.component';
@@ -19,7 +19,7 @@ import { ListingDetailsComponent } from './listing-details/components/listing-de
     PostComponent,
     ListingDetailsComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [HomeComponent],
 })
